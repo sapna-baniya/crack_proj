@@ -1,6 +1,6 @@
 
 
-
+*.mp4
 venv/
 data/raw/
 data/processed_data/
