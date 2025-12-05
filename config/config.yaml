@@ -1,0 +1,25 @@
+# Line 13: Add your AWS account ID
+aws:
+  region: "us-east-1"
+  account_id: "905418031724" 
+  
+  s3:
+    # Bucket names (will be created by Terraform)
+    raw_data_bucket: "crack-detection-raw-sapana-2024"  
+    processed_data_bucket: "crack-detection-processed-sapana-2024"
+    model_artifacts_bucket: "crack-detection-models-sapana-2024"
+  
+  # S3 Settings
+  versioning_enabled: true
+  encryption_enabled: true
+  lifecycle_rules:
+    logs_retention_days: 90
+    old_data_to_glacier_days: 180 # Replace this
+
+# Lines 51-52: Add your Google Drive folder IDs
+data:
+  local:
+    raw_data_dir: "data/raw"
+  google_drive:
+    positive_folder_id: "1jQCB-vXJNsyVgGVgkNKSWYxUrewBG9IR"  # Replace this
+    negative_folder_id: "1s57qMMgPIUgIO8IPhGylCBmpfVPzp9NP"  # Replace this
